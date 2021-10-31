@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row d-flex justify-content-center" style="margin-left: 130px">
+    <div class="col">
+      <img
+        *ngFor="let x of List_Pub"
+        [src]="x['image']"
+        style="width: 250px"
+        class="m-3"
+      />
+    </div>
+  </div>
+</div>

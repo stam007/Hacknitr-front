@@ -1,0 +1,19 @@
+.input_description {
+  display: grid;
+  grid-template-columns: 100% 0%;
+  //   width: 36%;
+
+  button {
+    background: transparent;
+    border: 0;
+    transform: translateX(-70px);
+    cursor: pointer;
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+.active_link {
+  color: #04e710;
+}

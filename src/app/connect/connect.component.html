@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="d-flex justify-content-center" style="margin-top: 15%">
+    <div
+      class="d-flex flex-column border rounded p-3 pb-5 text-center"
+      style="width: 400px"
+    >
+      <div class="p-2 mt-3"><h1>Go-Green</h1></div>
+      <div class="p-2 mt-4" *ngIf="loginstatus == false">
+        <input
+          class="form-control"
+          name="a1"
+          [(ngModel)]="user_data['email']"
+          placeholder="email"
+          type="email"
+        />
+      </div>
+
+      <div class="p-2">
+        <input
+          class="form-control"
+          name="a2"
+          [(ngModel)]="user_data['username']"
+          placeholder="username"
+          type="text"
+        />
+      </div>
+      <div class="p-2" *ngIf="loginstatus == false">
+        <input
+          class="form-control"
+          name="a3"
+          [(ngModel)]="user_data['name']"
+          placeholder="Full Name"
+          type="text"
+        />
+      </div>
+      <div class="p-2" *ngIf="loginstatus == false">
+        <label>Profile Image</label>
+        <input
+          type="file"
+          (change)="onFileSelect($event)"
+          class="form-control-file"
+          id="exampleFormControlFile1"
+        />
+      </div>
+      <div class="p-2">
+        <input
+          class="form-control"
+          name="a4"
+          [(ngModel)]="user_data['password']"
+          placeholder="password"
+          type="password"
+        />
+      </div>
+
+      <div class="p-2">
+        <button
+          class="btn btn-primary btn-block"
+          (click)="connect()"
+          *ngIf="loginstatus == true"
+        >
+          Log in
+        </button>
+        <button
+          class="btn btn-primary btn-block"
+          (click)="connect()"
+          *ngIf="loginstatus == false"
+        >
+          Registration
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div
+      class="border rounded mt-3 text-center p-3"
+      style="width: 400px"
+      *ngIf="loginstatus == true"
+    >
+      <h6>You do not have an account ?</h6>
+      <a>
+        <strong class="text-primary" (click)="loginstatus = false"
+          >Sign up</strong
+        ></a
+      >
+    </div>
+
+    <div
+      class="border rounded mt-3 text-center p-3"
+      style="width: 400px"
+      *ngIf="loginstatus == false"
+    >
+      <h6>Do you have an account?</h6>
+      <a>
+        <strong class="text-primary" (click)="loginstatus = true"
+          >Log in</strong
+        ></a
+      >
+    </div>
+  </div>
+</div>
