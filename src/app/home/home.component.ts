@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
   List_Pub = [];
 
   story = { title: '', image: '', video: '', story: true };
-  ihave_story = true;
+  ihave_story = false;
   ngOnInit(): void {
     this.httpservice.get('users/users/').subscribe((data) => {
       this.List_Users = data['results'];
@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
       .subscribe((data) => {
         console.log(data, 'hhhk');
         if (data['results'].length > 0) {
-          this.ihave_story = false;
+          this.ihave_story = true;
         }
       });
   }
