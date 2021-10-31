@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
   List_Pub = [];
 
   story = { title: '', image: '', video: '', story: true };
-  ihave_story = false;
+  ihave_story = true;
   ngOnInit(): void {
     this.httpservice.get('users/users/').subscribe((data) => {
       this.List_Users = data['results'];
@@ -75,7 +75,7 @@ export class HomeComponent implements OnInit {
     this.httpservice
       .post_form_data_h(this.formData, 'social/publications/')
       .subscribe((data) => {
-        this.ihave_story = false;
+        this.ihave_story = true;
         $('#exampleModalstory').modal('hide');
       });
   }
